@@ -1,0 +1,56 @@
+﻿@using Kwetter.WebApplication.Helpers.Extensions
+@using Kwetter.Models
+@inject SignInManager<ApplicationUser> SignInManager
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Kwetter</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awsome/web-fonts-with-css/css/fa-solid.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awsome/web-fonts-with-css/css/fa-regular.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awsome/web-fonts-with-css/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+        <a class="navbar-brand" href="/Home">
+            <span class="navbar-brand">
+                <img style="margin:auto; width:30px; height:30px" src="~/images/twitter-logo.svg" class="icon-banner" />
+                Kwetter
+            </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item @Url.MakeActive("home", "index")"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                @if (SignInManager.IsSignedIn(User) && !User.IsInRole(UserRoles.User))
+                {
+                    <li class="nav-item @Url.MakeActive("usermanagement", "index")"><a class="nav-link" asp-area="" asp-controller="UserManagement" asp-action="Index">Manage users</a></li>
+                }
+            </ul>
+            @await Html.PartialAsync("_LoginPartial")
+        </div>
+    </nav>
+    <div class="container-fluid application-body">
+        <div>
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Kwetter</p>
+            </footer>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

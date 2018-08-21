@@ -1,0 +1,64 @@
+﻿@using Kwetter.Models
+@{var userId = User.Claims.FirstOrDefault(c => c.Type.Equals("sub"))?.Value; }
+<script id="UserTemplate" type="text/template">
+    <tr data-user-id="{{id}}">
+        <td><a href="/KweetManagement/index/{{id}}">{{userName}}</a></td>
+        <td>{{firstName}}{{#ifNotEmpty middleName}} {{middleName}}{{/ifNotEmpty}} {{lastName}}</td>
+        <td>{{email}}</td>
+        <td>
+            @{
+                if (User.IsInRole(UserRoles.Administrator))
+                {
+                    @(Html.Raw(
+                            "{{#ifNotEqual id \"" + userId + "\" }}" +
+                            "<select class=\"form-control selectpicker\">" +
+                                 "<option data-id=\"{{id}}\" {{#ifEqual role \"User\"}} selected {{/ifEqual}}>User</option>" +
+                                 "<option data-id=\"{{id}}\" {{#ifEqual role \"Moderator\"}} selected {{/ifEqual}}>Moderator</option>" +
+                                 "<option data-id=\"{{id}}\" {{#ifEqual role \"Administrator\"}} selected {{/ifEqual}}>Administrator</option>" +
+                             "</select>" +
+                             "{{/ifNotEqual}}" +
+                             "{{#ifEqual id \"" + userId + "\" }} {{role}} {{/ifEqual}}"
+                             ))
+                }
+                else
+                {
+                    @:{{role}}
+                }
+            }
+        </td>
+        <td>
+            <div class="btn-group mr-2" role="group">
+                <button
+                 type="button" 
+                 class="
+                     btn
+                     {{#ifEqual isBanned false }}
+                         btn-warning
+                     {{/ifEqual}}
+                     {{#ifEqual isBanned true }}
+                         btn-success 
+                     {{/ifEqual}}
+                     
+                     " 
+                 id="banButton" 
+                 {{#ifNotEqual id "@userId" }} 
+                     onclick="changeBannedState('{{id}}', this)" 
+                 {{/ifNotEqual}} 
+                 {{#ifEqual id "@userId" }}
+                     disabled
+                 {{/ifEqual}}>
+                     <span 
+                     {{#ifEqual isBanned false }}
+                         class="fas fa-lock" 
+                     {{/ifEqual}}
+                     {{#ifEqual isBanned true }}
+                         class="fas fa-unlock" 
+                     {{/ifEqual}}
+                     title="Ban">
+                     </span>
+                 </button>
+                <button type="button" class="btn btn-danger" id="deleteButton" {{#ifNotEqual id "@userId" }} onclick="deleteUserButtonClick('{{id}}', '{{userName}}')" {{/ifNotEqual}} {{#ifEqual id "@userId" }}disabled{{/ifEqual}}><span class="fas fa-trash" title="Remove"></span></button>
+            </div>
+        </td>
+    </tr>
+</script>

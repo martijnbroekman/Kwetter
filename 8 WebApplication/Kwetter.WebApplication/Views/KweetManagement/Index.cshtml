@@ -1,0 +1,63 @@
+﻿@using System.Threading
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@model Kwetter.WebApplication.ViewModels.KweetManagementViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+
+
+<div class="container">
+    <h2>Kweets of: @Model.User.UserName</h2>
+    <div class="row" id="kweetsBody">
+        @foreach (var kweet in Model.Kweets)
+        {
+            <div class="col-md-4" data-kweet-id="@kweet.Id">
+                <div class="card border-info">
+                    <div class="card-body">
+                        <p>
+                            @kweet.Description
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        @kweet.Date.ToString("dd-MM-yyyy")
+                        <button class="btn btn-danger float-right" onclick="deleteKweetButtonClick(@(kweet.Id))"><span class="fas fa-trash"></span></button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary" onclick="loadMoreKweets(@Model.User.Id)">Load more</button>
+    </div>
+</div>
+
+<script id="kweetTemplate" type="text/template">
+    <div class="col-md-4" data-kweet-id="{{id}}">
+        <div class="card border-info">
+            <div class="card-body">
+                <p>
+                    {{description}}
+                </p>
+            </div>
+            <div class="card-footer">
+                {{ formatDate date }}
+                <button class="btn btn-danger float-right" onclick="deleteKweetButtonClick({{Id}})"><span class="fas fa-trash"></span></button>
+            </div>
+        </div>
+    </div>
+</script>
+
+@section scripts
+{
+    <script type="text/javascript" charset="utf8" src="~/lib/handlebars/handlebars.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="~/lib/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="~/lib/moment/moment.js"></script>
+    <script type="text/javascript" charset="utf8" src="~/js/datatables.helpers.js"></script>
+    <script type="text/javascript" charset="utf8" src="~/js/kweetmanagement.js"></script>
+    <script type="text/javascript">
+        
+    </script>
+}

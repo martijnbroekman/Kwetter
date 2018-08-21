@@ -1,0 +1,33 @@
+@using Microsoft.AspNetCore.Identity
+@using Kwetter.Models
+@using Kwetter.WebApplication.Helpers.Extensions
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Kwetter.WebApplication
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@if (SignInManager.IsSignedIn(User))
+{
+    var user = await UserManager.GetUserAsync(User);
+    string fullName = string.IsNullOrEmpty(user.MiddleName) ?
+        string.Format("{0} {1}", user.FirstName, user.LastName) :
+        string.Format("{0} {1} {2}", user.FirstName, user.MiddleName, user.LastName);
+
+    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-text"><i class="fa fa-user-circle-o" aria-hidden="true"></i> @(!string.IsNullOrEmpty(fullName) ? fullName : user.UserName)</a>
+            </li>
+            <li class="nav-item">
+                <button style="cursor:pointer" type="submit" class="btn btn-link navbar-btn nav-link">Log out</button>
+            </li>
+        </ul>
+    </form>
+}
+else
+{
+    <div class="navbar-right">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link @Url.MakeActive("account", "login")" asp-area="" asp-controller="Account" asp-action="Login">Log in</a></li>
+        </ul>
+    </div>
+}

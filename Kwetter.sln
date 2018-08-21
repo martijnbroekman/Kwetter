@@ -1,0 +1,95 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Models", "1 Models", "{299D0D1E-ACDC-4D79-A065-2152FCBA6A3B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 ModelTests", "2 ModelTests", "{0908CE13-2B52-4737-B44D-B67D6E5063E1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kwetter.Models", "1 Models\Kwetter.Models\Kwetter.Models.csproj", "{09FFF3E5-9399-4844-8A38-C96DFD2E940F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 Data", "3 Data", "{AEE9E6B6-C6A7-45CF-AB88-5E4F42B7CC01}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kwetter.Data", "3 Data\Kwetter.Data\Kwetter.Data.csproj", "{5157BC4D-E21B-4B51-941A-0102476C9D47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 Repository", "4 Repository", "{80C46EEF-CC36-4F4F-A94D-E8F71CCF3D61}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kwetter.Repository", "4 Repository\Kwetter.Repository\Kwetter.Repository.csproj", "{22D089A0-228F-4A9E-9283-EF702139AA90}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 RepositoryTests", "5 RepositoryTests", "{FB9ED4C3-4E6A-4951-8E24-86F7C0D92A62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 Service", "6 Service", "{52FBF0E7-1348-499B-845F-24983AF75B78}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kwetter.Service", "6 Service\Kwetter.Service\Kwetter.Service.csproj", "{50AE0B71-20A1-4FFB-B1E8-D708708D552A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7 ServiceTests", "7 ServiceTests", "{33DECC7C-E1B5-4447-98E8-34640B1F8B87}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8 WebApplication", "8 WebApplication", "{A0B766EB-8995-478A-922F-6982C567EAE9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kwetter.WebApplication", "8 WebApplication\Kwetter.WebApplication\Kwetter.WebApplication.csproj", "{BDAA7F45-2717-478F-BC84-06A9C61DA8B1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kwetter.ServiceTests", "7 ServiceTests\Kwetter.ServiceTests\Kwetter.ServiceTests.csproj", "{65EA1840-D8CB-4A79-B801-34611DE73F84}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kwetter.RepositoryTests", "5 RepositoryTests\Kwetter.RepositoryTests\Kwetter.RepositoryTests.csproj", "{56E6D0C9-CAA1-4645-83E1-4BC096A12BCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9 WebApplicationTests", "9 WebApplicationTests", "{37C4A77E-9E93-4C69-B8ED-1292CA48CCA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kwetter.WebApplicationTests", "9 WebApplicationTests\Kwetter.WebApplicationTests\Kwetter.WebApplicationTests.csproj", "{5A278040-EEB2-45A4-8DB4-A06B4183B0D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09FFF3E5-9399-4844-8A38-C96DFD2E940F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09FFF3E5-9399-4844-8A38-C96DFD2E940F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09FFF3E5-9399-4844-8A38-C96DFD2E940F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09FFF3E5-9399-4844-8A38-C96DFD2E940F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5157BC4D-E21B-4B51-941A-0102476C9D47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5157BC4D-E21B-4B51-941A-0102476C9D47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5157BC4D-E21B-4B51-941A-0102476C9D47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5157BC4D-E21B-4B51-941A-0102476C9D47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22D089A0-228F-4A9E-9283-EF702139AA90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22D089A0-228F-4A9E-9283-EF702139AA90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22D089A0-228F-4A9E-9283-EF702139AA90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22D089A0-228F-4A9E-9283-EF702139AA90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50AE0B71-20A1-4FFB-B1E8-D708708D552A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50AE0B71-20A1-4FFB-B1E8-D708708D552A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50AE0B71-20A1-4FFB-B1E8-D708708D552A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50AE0B71-20A1-4FFB-B1E8-D708708D552A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDAA7F45-2717-478F-BC84-06A9C61DA8B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDAA7F45-2717-478F-BC84-06A9C61DA8B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDAA7F45-2717-478F-BC84-06A9C61DA8B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDAA7F45-2717-478F-BC84-06A9C61DA8B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65EA1840-D8CB-4A79-B801-34611DE73F84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65EA1840-D8CB-4A79-B801-34611DE73F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65EA1840-D8CB-4A79-B801-34611DE73F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65EA1840-D8CB-4A79-B801-34611DE73F84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56E6D0C9-CAA1-4645-83E1-4BC096A12BCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56E6D0C9-CAA1-4645-83E1-4BC096A12BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56E6D0C9-CAA1-4645-83E1-4BC096A12BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56E6D0C9-CAA1-4645-83E1-4BC096A12BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A278040-EEB2-45A4-8DB4-A06B4183B0D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A278040-EEB2-45A4-8DB4-A06B4183B0D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A278040-EEB2-45A4-8DB4-A06B4183B0D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A278040-EEB2-45A4-8DB4-A06B4183B0D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{09FFF3E5-9399-4844-8A38-C96DFD2E940F} = {299D0D1E-ACDC-4D79-A065-2152FCBA6A3B}
+		{5157BC4D-E21B-4B51-941A-0102476C9D47} = {AEE9E6B6-C6A7-45CF-AB88-5E4F42B7CC01}
+		{22D089A0-228F-4A9E-9283-EF702139AA90} = {80C46EEF-CC36-4F4F-A94D-E8F71CCF3D61}
+		{50AE0B71-20A1-4FFB-B1E8-D708708D552A} = {52FBF0E7-1348-499B-845F-24983AF75B78}
+		{BDAA7F45-2717-478F-BC84-06A9C61DA8B1} = {A0B766EB-8995-478A-922F-6982C567EAE9}
+		{65EA1840-D8CB-4A79-B801-34611DE73F84} = {33DECC7C-E1B5-4447-98E8-34640B1F8B87}
+		{56E6D0C9-CAA1-4645-83E1-4BC096A12BCA} = {FB9ED4C3-4E6A-4951-8E24-86F7C0D92A62}
+		{5A278040-EEB2-45A4-8DB4-A06B4183B0D6} = {37C4A77E-9E93-4C69-B8ED-1292CA48CCA8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE15665C-366C-48B3-9D33-422B16CD42E4}
+	EndGlobalSection
+EndGlobal

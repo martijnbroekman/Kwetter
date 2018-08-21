@@ -1,0 +1,12 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "jquery-validation": "1.17.0",
+    "bootstrap": "v4.0.0",
+    "font-awsome": "5.0.8",
+    "handlebars": "v4.0.11",
+    "datatables": "DataTables#1.10.16",
+    "sweetalert2": "v7.16.0"
+  }
+}

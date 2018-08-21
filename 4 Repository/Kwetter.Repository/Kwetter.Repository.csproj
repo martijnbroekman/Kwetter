@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\1 Models\Kwetter.Models\Kwetter.Models.csproj" />
+    <ProjectReference Include="..\..\3 Data\Kwetter.Data\Kwetter.Data.csproj" />
+  </ItemGroup>
+
+</Project>

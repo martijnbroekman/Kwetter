@@ -1,0 +1,59 @@
+<div class="container-fluid" style="padding-top: 20px;" >
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12 mb-3">
+          <post-tweet (post)="onTweet($event)"></post-tweet>
+        </div>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Timeline</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">@Mentions</a>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <tweet *ngFor="let kweet of kweets" [value]="kweet"></tweet>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card mb-3">
+        <div class="card-body">
+            <h4 class="card-title">Your tweets 87</h4>
+            <div class="row">
+              <div class="col-2">
+                foto
+              </div>
+              <div class="col-10">
+                1 our ago: the tweet
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">Following 23 met dr onder de foto's</div>
+              <div class="col-md-6">Followers 2 met dr onder de foto's</div>
+            </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          Trends
+        </div>
+        <div class="card-block">
+          <ul>
+            <li><a href="#">#SWAG</a></li>
+            <li><a href="#">#YOLO</a></li>
+            <li><a href="#">#JPA</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

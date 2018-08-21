@@ -1,0 +1,20 @@
+before_script:
+  - docker info
+
+stages:
+  - build
+  - deploy
+
+job1:
+  stage: build
+  script:
+    - docker build -t kwetter-front-end:prod .
+  only:
+    - master
+
+job2:
+  stage: deploy
+  script:
+    - docker run -p 80:80 kwetter-front-end:prod
+  only:
+    - master
